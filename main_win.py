@@ -33,8 +33,9 @@ print('\_| |_/\__,_|\__\___/ \____/\__,_|\__\____/|_|\_\_|_| |_|')
 print("author: @karuchkar")
 print("")
 
-i1 = input('Пожалуйста, введите интервал между сообщениями в секундах(def = 901сек(15мин))')
-i2 = input('Пожалуйста, укажите слово, которое нужно писать(def = Кошка скин)')
+i1 = input('Пожалуйста, введите интервал между сообщениями в секундах(def = 901сек(15мин)).')
+i2 = input('Пожалуйста, укажите слово, которое нужно писать(def = Кошка скин).')
+i3 = input('Укажите язык, который вы предпочитаете для вашего слова(Русский - 1, Английский - 2).')
 
 if i1 == "def":
     interval = 901
@@ -52,8 +53,15 @@ else:
     word = i2
     pass
 
+if i3 == 1:
+    py_win_keyboard_layout.change_foreground_window_keyboard_layout(0x04190419)
+elif i3 == "":
+    exit()
+else:
+    py_win_keyboard_layout.change_foreground_window_keyboard_layout(0x04090409)
+    pass
+
 print("Через 10сек запустится бот. Успейте переключить раскладку на нужный вам язык и кликнуть на поле ввода в телеграм")
-py_win_keyboard_layout.change_foreground_window_keyboard_layout(0x04190419)
 
 if t == 1:
     time.sleep(10)
@@ -73,3 +81,5 @@ while a == 1:
         pyautogui.press('enter')
         #kb.release(Key.enter)
     print('Команда введена, ждем 15 мин...')
+
+# Чай татарский бик тэмлэ, бик тэмлэ
